@@ -2,104 +2,173 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>a3x0666 - SOC Analyst Portfolio</title>
+<title>Abhay Aneesh | SOC Analyst Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SOC-focused cybersecurity portfolio of a3x0666 featuring malware triage and SOC automation projects">
+<meta name="description" content="SOC-focused cybersecurity portfolio featuring malware triage and SOC automation projects">
 
 <style>
+:root {
+  --bg-main: #020617;
+  --bg-card: #020617;
+  --bg-alt: #0f172a;
+  --accent: #38bdf8;
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "JetBrains Mono", system-ui, monospace;
 }
 
 body {
-  background: #0f172a;
-  color: #e5e7eb;
+  background: radial-gradient(circle at top, #020617, #000);
+  color: var(--text-main);
   line-height: 1.6;
 }
 
+/* ===== HERO / TERMINAL ===== */
 header {
-  background: #020617;
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
+.terminal {
+  display: inline-block;
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 40px rgba(56,189,248,0.15);
+}
+
+.terminal span {
+  color: var(--accent);
+}
+
 header h1 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
 }
 
 header p {
-  margin-top: 10px;
-  color: #94a3b8;
+  color: var(--text-muted);
 }
 
 .links {
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .links a {
-  color: #38bdf8;
-  margin: 0 10px;
+  color: var(--accent);
+  margin: 0 12px;
   text-decoration: none;
-  font-weight: 500;
+  position: relative;
 }
 
+.links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background: var(--accent);
+  transition: 0.3s;
+}
+
+.links a:hover::after {
+  width: 100%;
+}
+
+/* ===== SECTIONS ===== */
 section {
-  max-width: 900px;
-  margin: 40px auto;
+  max-width: 950px;
+  margin: 60px auto;
   padding: 0 20px;
 }
 
 h2 {
-  margin-bottom: 15px;
-  border-bottom: 2px solid #1e293b;
-  padding-bottom: 5px;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: var(--accent);
+  letter-spacing: 1px;
 }
 
+/* ===== ABOUT ===== */
+.about {
+  background: var(--bg-card);
+  border: 1px solid #1e293b;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+/* ===== SKILLS ===== */
 .skills {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
 }
 
 .skills li {
-  background: #020617;
-  margin: 6px;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-size: 0.9rem;
+  background: var(--bg-card);
+  border: 1px solid #1e293b;
+  padding: 12px;
+  border-radius: 8px;
+  transition: 0.2s;
 }
 
+.skills li:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ===== PROJECTS ===== */
 .project {
-  background: #020617;
-  padding: 18px;
-  border-radius: 8px;
-  margin-bottom: 18px;
+  background: var(--bg-card);
+  border: 1px solid #1e293b;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.project::before {
+  content: "●";
+  color: var(--accent);
+  position: absolute;
+  top: 15px;
+  right: 20px;
 }
 
 .project h3 {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .project p {
-  color: #cbd5f5;
+  color: var(--text-muted);
+}
+
+.project strong {
+  color: var(--text-main);
 }
 
 .project a {
   display: inline-block;
-  margin-top: 6px;
-  color: #38bdf8;
+  margin-top: 10px;
+  color: var(--accent);
   text-decoration: none;
-  font-size: 0.95rem;
 }
 
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
-  padding: 25px;
+  padding: 40px 20px;
   font-size: 0.8rem;
-  color: #64748b;
+  color: var(--text-muted);
 }
 </style>
 </head>
@@ -107,74 +176,72 @@ footer {
 <body>
 
 <header>
-  <h1>Abhay Aneesh</h1>
-  <p>SOC Analyst Aspirant | Malware Triage & Security Automation</p>
+  <div class="terminal">
+    <p><span>root@soc:</span>~$ whoami</p>
+    <h1>Abhay Aneesh</h1>
+    <p>SOC Analyst Aspirant · Malware Triage · Security Automation</p>
 
-  <div class="links">
-    <a href="https://github.com/a3x0666" target="_blank">GitHub</a>
-    <a href="mailto:cruisestorm143@gmail.com">Email</a>
+    <div class="links">
+      <a href="https://github.com/a3x0666" target="_blank">GitHub</a>
+      <a href="mailto:cruisestorm143@gmail.com">Email</a>
+    </div>
   </div>
 </header>
 
 <section>
-  <h2>About Me</h2>
-  <p>
+  <h2>ABOUT</h2>
+  <div class="about">
     I am an aspiring SOC analyst with 0–1 years of hands-on experience,
-    focused on security monitoring, malware triage, and incident support.
-    I build practical tools to understand how alerts are generated,
-    how malicious files are analyzed, and how repetitive SOC tasks
-    can be automated to reduce analyst fatigue.
-  </p>
+    focused on alert triage, malware analysis, and incident response support.
+    I build practical security tools to understand how alerts are generated,
+    enriched, and acted upon in real SOC environments.
+  </div>
 </section>
 
 <section>
-  <h2>Core Skills</h2>
+  <h2>CORE SKILLS</h2>
   <ul class="skills">
-    <li>SOC Operations & Alert Triage</li>
-    <li>Malware Metadata Analysis</li>
-    <li>File Hashing & IOC Extraction</li>
-    <li>Linux & Bash</li>
-    <li>Python (Security Scripting)</li>
+    <li>SOC Alert Triage & Analysis</li>
+    <li>Malware Metadata & Static Analysis</li>
+    <li>IOC Extraction & Hashing</li>
+    <li>Linux & Bash Operations</li>
+    <li>Python for Security Automation</li>
     <li>OSINT Fundamentals</li>
     <li>Git & GitHub</li>
   </ul>
 </section>
 
 <section>
-  <h2>Projects</h2>
+  <h2>PROJECTS</h2>
 
   <div class="project">
     <h3>MetaScan — Malware Metadata Scanner</h3>
     <p>
-      A malware triage tool designed to extract and analyze file metadata
-      for initial SOC investigation. The project focuses on fast static
-      analysis by collecting hashes, file properties, and indicators that
-      help analysts decide whether deeper analysis is required.
+      Malware triage tool for extracting file metadata, hashes, and indicators
+      to assist initial SOC investigations and alert enrichment.
     </p>
-    <p><strong>Relevance to SOC:</strong> Initial malware triage, alert enrichment, faster decision-making.</p>
+    <p><strong>SOC Value:</strong> Faster triage · Better alert context</p>
     <a href="https://github.com/a3x0666/malware-scan" target="_blank">
-      View on GitHub →
+      → View on GitHub
     </a>
   </div>
 
   <div class="project">
-    <h3>AutoBlocker-SOC — SOC Response Automation</h3>
+    <h3>AutoBlocker-SOC — Response Automation</h3>
     <p>
-      A SOC-focused automation project aimed at reducing response time
-      by automatically blocking suspicious indicators. The project
-      demonstrates how repetitive containment actions can be scripted
-      to support analysts during high alert volume scenarios.
+      Automation project demonstrating how suspicious indicators can be
+      programmatically blocked to reduce response time during high alert volume.
     </p>
-    <p><strong>Relevance to SOC:</strong> Incident response support, automation, operational efficiency.</p>
+    <p><strong>SOC Value:</strong> Reduced MTTR · Analyst efficiency</p>
     <a href="https://github.com/a3x0666/AutoBlocker-SOC" target="_blank">
-      View on GitHub →
+      → View on GitHub
     </a>
   </div>
 
 </section>
 
 <footer>
-  © 2026 a3x0666 · SOC-Focused Portfolio · Hosted on GitHub Pages
+  © 2026 a3x0666 · SOC-Focused Portfolio · GitHub Pages
 </footer>
 
 </body>
