@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Your Name | Cybersecurity Portfolio</title>
+<title>a3x0666 - SOC Analyst Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Cybersecurity portfolio of an aspiring SOC analyst and pentester">
+<meta name="description" content="SOC-focused cybersecurity portfolio of a3x0666 featuring malware triage and SOC automation projects">
 
 <style>
 * {
@@ -27,7 +27,7 @@ header {
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
 }
 
 header p {
@@ -47,7 +47,7 @@ header p {
 }
 
 section {
-  max-width: 800px;
+  max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
 }
@@ -74,16 +74,22 @@ h2 {
 
 .project {
   background: #020617;
-  padding: 16px;
+  padding: 18px;
   border-radius: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .project h3 {
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+}
+
+.project p {
+  color: #cbd5f5;
 }
 
 .project a {
+  display: inline-block;
+  margin-top: 6px;
   color: #38bdf8;
   text-decoration: none;
   font-size: 0.95rem;
@@ -101,36 +107,36 @@ footer {
 <body>
 
 <header>
-  <h1>Your Name</h1>
-  <p>Cybersecurity Enthusiast | SOC / Pentesting Aspirant</p>
+  <h1>a3x0666</h1>
+  <p>SOC Analyst Aspirant | Malware Triage & Security Automation</p>
 
   <div class="links">
-    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-    <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-    <a href="mailto:youremail@gmail.com">Email</a>
+    <a href="https://github.com/a3x0666" target="_blank">GitHub</a>
+    <a href="mailto:cruisestorm143@gmail.com">Email</a>
   </div>
 </header>
 
 <section>
   <h2>About Me</h2>
   <p>
-    I am a cybersecurity beginner with 0–1 years of hands-on experience,
-    building practical security tools and learning core concepts such as
-    malware analysis, OSINT, SOC operations, and Linux internals.
-    I focus on understanding how attacks work and how defenders detect them.
+    I am an aspiring SOC analyst with 0–1 years of hands-on experience,
+    focused on security monitoring, malware triage, and incident support.
+    I build practical tools to understand how alerts are generated,
+    how malicious files are analyzed, and how repetitive SOC tasks
+    can be automated to reduce analyst fatigue.
   </p>
 </section>
 
 <section>
-  <h2>Skills</h2>
+  <h2>Core Skills</h2>
   <ul class="skills">
+    <li>SOC Operations & Alert Triage</li>
+    <li>Malware Metadata Analysis</li>
+    <li>File Hashing & IOC Extraction</li>
     <li>Linux & Bash</li>
-    <li>Networking Fundamentals</li>
-    <li>Malware Analysis (Basics)</li>
-    <li>OSINT</li>
-    <li>Python (Basics)</li>
+    <li>Python (Security Scripting)</li>
+    <li>OSINT Fundamentals</li>
     <li>Git & GitHub</li>
-    <li>CTF Methodology</li>
   </ul>
 </section>
 
@@ -138,23 +144,29 @@ footer {
   <h2>Projects</h2>
 
   <div class="project">
-    <h3>🔐 Project One Name</h3>
+    <h3>MetaScan — Malware Metadata Scanner</h3>
     <p>
-      Brief description of the project, security problem addressed,
-      tools used, and what you learned.
+      A malware triage tool designed to extract and analyze file metadata
+      for initial SOC investigation. The project focuses on fast static
+      analysis by collecting hashes, file properties, and indicators that
+      help analysts decide whether deeper analysis is required.
     </p>
-    <a href="https://github.com/yourusername/project-one" target="_blank">
+    <p><strong>Relevance to SOC:</strong> Initial malware triage, alert enrichment, faster decision-making.</p>
+    <a href="https://github.com/a3x0666/malware-scan" target="_blank">
       View on GitHub →
     </a>
   </div>
 
   <div class="project">
-    <h3>🛡️ Project Two Name</h3>
+    <h3>AutoBlocker-SOC — SOC Response Automation</h3>
     <p>
-      Explain the technical concept and outcome.
-      Keep it concise and security-focused.
+      A SOC-focused automation project aimed at reducing response time
+      by automatically blocking suspicious indicators. The project
+      demonstrates how repetitive containment actions can be scripted
+      to support analysts during high alert volume scenarios.
     </p>
-    <a href="https://github.com/yourusername/project-two" target="_blank">
+    <p><strong>Relevance to SOC:</strong> Incident response support, automation, operational efficiency.</p>
+    <a href="https://github.com/a3x0666/AutoBlocker-SOC" target="_blank">
       View on GitHub →
     </a>
   </div>
@@ -162,7 +174,7 @@ footer {
 </section>
 
 <footer>
-  © 2026 Your Name · Built with HTML · Hosted on GitHub Pages
+  © 2026 a3x0666 · SOC-Focused Portfolio · Hosted on GitHub Pages
 </footer>
 
 </body>
