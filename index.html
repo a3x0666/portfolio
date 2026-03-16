@@ -1,248 +1,756 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Abhay Aneesh | SOC Analyst Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SOC-focused cybersecurity portfolio featuring malware triage and SOC automation projects">
+  <meta charset="UTF-8" />
+  <title>Abhay Aneesh | Cybersecurity Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Cybersecurity-focused Computer Science undergraduate with experience in SOC automation, malware triage, and SIEM engineering." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-alt: #0d0d0d;
+      --card-bg: #121212;
+      --accent: #ffffff;
+      --accent-soft: rgba(255, 255, 255, 0.06);
+      --text: #f5f5f5;
+      --muted: #a3a3a3;
+      --border: #262626;
+      --radius-lg: 14px;
+      --radius-md: 10px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.8);
+      --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.7);
+      --transition-fast: 160ms ease-out;
+    }
 
-<style>
-:root {
-  --bg-main: #020617;
-  --bg-card: #020617;
-  --bg-alt: #0f172a;
-  --accent: #38bdf8;
-  --text-main: #e5e7eb;
-  --text-muted: #94a3b8;
-}
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "JetBrains Mono", system-ui, monospace;
-}
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #1a1a1a 0, #050505 45%, #000 100%);
+      scroll-behavior: smooth;
+    }
 
-body {
-  background: radial-gradient(circle at top, #020617, #000);
-  color: var(--text-main);
-  line-height: 1.6;
-}
+    body {
+      line-height: 1.6;
+    }
 
-/* ===== HERO / TERMINAL ===== */
-header {
-  padding: 80px 20px;
-  text-align: center;
-}
+    .container {
+      width: 100%;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
 
-.terminal {
-  display: inline-block;
-  background: #020617;
-  border: 1px solid #1e293b;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 0 40px rgba(56,189,248,0.15);
-}
+    .section {
+      padding: 4rem 0;
+    }
 
-.terminal span {
-  color: var(--accent);
-}
+    .section-alt {
+      background: radial-gradient(circle at top left, #050505 0, #050505 30%, #000 100%);
+      border-block: 1px solid rgba(38, 38, 38, 0.9);
+    }
 
-header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-}
+    .section h2 {
+      font-size: 1.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: #fafafa;
+    }
 
-header p {
-  color: var(--text-muted);
-}
+    .section-narrow {
+      max-width: 720px;
+      margin: 0 auto;
+    }
 
-.links {
-  margin-top: 20px;
-}
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 0.96),
+        rgba(10, 10, 10, 0.7),
+        transparent
+      );
+      border-bottom: 1px solid rgba(38, 38, 38, 0.9);
+    }
 
-.links a {
-  color: var(--accent);
-  margin: 0 12px;
-  text-decoration: none;
-  position: relative;
-}
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
 
-.links a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -3px;
-  background: var(--accent);
-  transition: 0.3s;
-}
+    .logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: #0a0a0a;
+      border: 1px solid #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #f9fafb;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 1),
+        0 16px 35px rgba(0, 0, 0, 0.9);
+    }
 
-.links a:hover::after {
-  width: 100%;
-}
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-left: 1.3rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      position: relative;
+      transition: color var(--transition-fast);
+    }
 
-/* ===== SECTIONS ===== */
-section {
-  max-width: 950px;
-  margin: 60px auto;
-  padding: 0 20px;
-}
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.35rem;
+      width: 0;
+      height: 1px;
+      border-radius: 999px;
+      background: #ffffff;
+      transition: width 140ms ease-out;
+    }
 
-h2 {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-  color: var(--accent);
-  letter-spacing: 1px;
-}
+    .nav a:hover {
+      color: #e5e5e5;
+    }
 
-/* ===== ABOUT ===== */
-.about {
-  background: var(--bg-card);
-  border: 1px solid #1e293b;
-  padding: 25px;
-  border-radius: 10px;
-}
+    .nav a:hover::after {
+      width: 100%;
+    }
 
-/* ===== SKILLS ===== */
-.skills {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
-}
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+    }
 
-.skills li {
-  background: var(--bg-card);
-  border: 1px solid #1e293b;
-  padding: 12px;
-  border-radius: 8px;
-  transition: 0.2s;
-}
+    .hero-grid {
+      display: grid;
+      gap: 2.2rem;
+    }
 
-.skills li:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
 
-/* ===== PROJECTS ===== */
-.project {
-  background: var(--bg-card);
-  border: 1px solid #1e293b;
-  padding: 25px;
-  border-radius: 10px;
-  margin-bottom: 25px;
-  position: relative;
-}
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 2.8rem);
+      margin: 0 0 1rem;
+      line-height: 1.15;
+    }
 
-.project::before {
-  content: "●";
-  color: var(--accent);
-  position: absolute;
-  top: 15px;
-  right: 20px;
-}
+    .hero .accent {
+      color: #ffffff;
+    }
 
-.project h3 {
-  margin-bottom: 8px;
-}
+    .hero-subtitle {
+      color: var(--muted);
+      max-width: 560px;
+      font-size: 0.98rem;
+    }
 
-.project p {
-  color: var(--text-muted);
-}
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.6rem 0 1rem;
+    }
 
-.project strong {
-  color: var(--text-main);
-}
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
 
-.project a {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--accent);
-  text-decoration: none;
-}
+    .hero-meta span {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(163, 163, 163, 0.4);
+      background: #050505;
+    }
 
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-</style>
+    .hero-profile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .profile-wrapper {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #ffffff;
+      box-shadow: var(--shadow-soft);
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .profile-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-pill);
+      padding: 0.6rem 1.4rem;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform 120ms ease-out,
+        box-shadow var(--transition-fast), border-color var(--transition-fast),
+        color var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn.primary {
+      background: #ffffff;
+      color: #050505;
+      font-weight: 600;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    .btn.ghost {
+      background: rgba(23, 23, 23, 0.95);
+      border-color: rgba(163, 163, 163, 0.5);
+      color: #f5f5f5;
+    }
+
+    .btn.ghost:hover {
+      border-color: rgba(212, 212, 212, 0.8);
+      background: rgba(23, 23, 23, 1);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1.8rem;
+    }
+
+    .timeline-item {
+      background: #050505;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.4rem 1.25rem;
+      border: 1px solid rgba(38, 38, 38, 0.9);
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+    }
+
+    .timeline-header h3 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .timeline-org {
+      margin: 0.15rem 0 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .timeline-body {
+      margin: 0.75rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .timeline-body li {
+      margin-bottom: 0.35rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: #050505;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.4rem 1.3rem;
+      border: 1px solid rgba(38, 38, 38, 0.9);
+      box-shadow: var(--shadow-subtle);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -120px;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), transparent 55%);
+      opacity: 0;
+      transition: opacity 200ms ease-out;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card h3 {
+      margin: 0 0 0.25rem;
+    }
+
+    .card .tagline {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .card > p {
+      margin-top: 0.9rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .card-list {
+      margin: 0.8rem 0 0.5rem;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .card-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .card-links a {
+      font-size: 0.85rem;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .card-links a:hover {
+      text-decoration: underline;
+    }
+
+    .card-meta {
+      margin-top: 0.7rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .research-item {
+      background: #050505;
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.4rem 1.3rem;
+      border: 1px solid rgba(38, 38, 38, 0.9);
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .research-item h3 {
+      margin: 0 0 0.2rem;
+    }
+
+    .research-meta {
+      margin: 0 0 0.8rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .research-item ul {
+      margin: 0.8rem 0 0;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .skills-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .skills-grid h3 {
+      margin: 0 0 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .skills-grid ul {
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .skills-grid li {
+      margin-bottom: 0.3rem;
+    }
+
+    .edu-item {
+      background: #050505;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.4rem 1.3rem;
+      border: 1px solid rgba(38, 38, 38, 0.9);
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .edu-meta {
+      margin: 0.15rem 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .contact-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 1rem 0 0;
+      font-size: 0.9rem;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-list a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .contact-list a:hover {
+      text-decoration: underline;
+    }
+
+    .site-footer {
+      border-top: 1px solid rgba(38, 38, 38, 0.9);
+      padding: 1.2rem 0 1.5rem;
+      background: #050505;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .site-footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      color: #ffffff;
+    }
+
+    @media (min-width: 720px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr);
+        align-items: center;
+      }
+
+      .hero-profile {
+        justify-content: flex-end;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 3.2rem;
+      }
+
+      .section {
+        padding: 3rem 0;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-  <div class="terminal">
-    <p><span>root@soc:</span>~$ whoami</p>
-    <h1>Abhay Aneesh</h1>
-    <p>SOC Analyst Aspirant · Malware Triage · Security Automation</p>
-
-    <div class="links">
-      <a href="https://github.com/a3x0666" target="_blank">GitHub</a>
-      <a href="mailto:cruisestorm143@gmail.com">Email</a>
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">AA</div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </div>
-</header>
+  </header>
 
-<section>
-  <h2>ABOUT</h2>
-  <div class="about">
-    I am an aspiring SOC analyst with 0–1 years of hands-on experience,
-    focused on alert triage, malware analysis, and incident response support.
-    I build practical security tools to understand how alerts are generated,
-    enriched, and acted upon in real SOC environments.
-  </div>
-</section>
+  <main>
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <p class="hero-kicker">Cybersecurity · SOC Automation · Malware Triage</p>
+          <h1>Hi, I’m <span class="accent">Abhay Aneesh</span>.</h1>
+          <p class="hero-subtitle">
+            Cybersecurity-focused Computer Science undergraduate specializing in SOC automation, entropy-based malware detection,
+            and SIEM engineering with Splunk and AWS.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#projects">View projects</a>
+            <a class="btn ghost" href="#contact">Contact me</a>
+          </div>
+          <div class="hero-meta">
+            <span>Kerala, India</span>
+            <span>Open to internships &amp; entry-level roles</span>
+          </div>
+        </div>
+        <div class="hero-profile">
+          <div class="profile-wrapper">
+            <img src="cv-image.jpg" alt="Portrait of Abhay Aneesh" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <h2>CORE SKILLS</h2>
-  <ul class="skills">
-    <li>SOC Alert Triage & Analysis</li>
-    <li>Malware Metadata & Static Analysis</li>
-    <li>IOC Extraction & Hashing</li>
-    <li>Linux & Bash Operations</li>
-    <li>Python for Security Automation</li>
-    <li>OSINT Fundamentals</li>
-    <li>Git & GitHub</li>
-  </ul>
-</section>
+    <section id="about" class="section">
+      <div class="container section-narrow">
+        <h2>About</h2>
+        <p>
+          I am a Computer Science undergraduate with a minor in Cybersecurity, focused on building practical security tooling that
+          reduces false positives and improves analyst efficiency in SOC environments. I enjoy working at the intersection of
+          static analysis, log analytics, and automation.
+        </p>
+      </div>
+    </section>
 
-<section>
-  <h2>PROJECTS</h2>
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <article class="timeline-item">
+            <header class="timeline-header">
+              <div>
+                <h3>IT Support Specialist</h3>
+                <p class="timeline-org">COROAT Trust · Tamil Nadu, India</p>
+              </div>
+              <span class="timeline-date">June 2024</span>
+            </header>
+            <ul class="timeline-body">
+              <li>Managed and secured network infrastructure with firewall rules, access control policies, and system hardening.</li>
+              <li>Monitored system and authentication logs to detect suspicious activities and improve early threat visibility.</li>
+              <li>Implemented data protection practices including secure configurations, patch management, and network segmentation.</li>
+            </ul>
+          </article>
 
-  <div class="project">
-    <h3>MetaScan — Malware Metadata Scanner</h3>
-    <p>
-      Malware triage tool for extracting file metadata, hashes, and indicators
-      to assist initial SOC investigations and alert enrichment.
-    </p>
-    <p><strong>SOC Value:</strong> Faster triage · Better alert context</p>
-    <a href="https://github.com/a3x0666/malware-scan" target="_blank">
-      → View on GitHub
-    </a>
-  </div>
+          <article class="timeline-item">
+            <header class="timeline-header">
+              <div>
+                <h3>Summer Intern (Networking &amp; Cybersecurity)</h3>
+              <p class="timeline-org">Bharat Electronics Limited (BEL) · Bengaluru, India</p>
+              </div>
+              <span class="timeline-date">Aug 2024</span>
+            </header>
+            <ul class="timeline-body">
+              <li>Assisted in documenting network security controls within regulated manufacturing systems.</li>
+              <li>Learned supply chain security, workplace safety protocols, and quality standards (ISO 9001, MIL-spec).</li>
+              <li>Reviewed security compliance workflows aligned with ISO 9001 and MIL-spec standards.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <div class="project">
-    <h3>AutoBlocker-SOC — Response Automation</h3>
-    <p>
-      Automation project demonstrating how suspicious indicators can be
-      programmatically blocked to reduce response time during high alert volume.
-    </p>
-    <p><strong>SOC Value:</strong> Reduced MTTR · Analyst efficiency</p>
-    <a href="https://github.com/a3x0666/AutoBlocker-SOC" target="_blank">
-      → View on GitHub
-    </a>
-  </div>
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Highlighted Projects</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>MetaScan Platform</h3>
+            <p class="tagline">Web-based malware metadata analyzer</p>
+            <p>
+              A web platform that automates malware metadata extraction (hashes, PE headers, signatures) to accelerate static triage.
+            </p>
+            <ul class="card-list">
+              <li>Reduced manual triage time by ~40% via automated extraction and structured summaries.</li>
+              <li>Identified anomalous PE characteristics with ~95% accuracy to improve early-stage assessment.</li>
+              <li>Designed a lightweight UI that improved analyst readability and workflow clarity by ~30%.</li>
+            </ul>
+            <div class="card-links">
+              <a href="https://github.com/a3x0666/malware-scan" target="https://github.com/a3x0666/malware-scan">Source code →</a>
+            </div>
+            <div class="card-meta">2025 – Present · Project Lead / Developer · Phagwara, Punjab</div>
+          </article>
 
-</section>
+          <article class="card">
+            <h3>AutoBlocker</h3>
+            <p class="tagline">SOC alerting &amp; automated threat response</p>
+            <p>
+              An end-to-end SOC automation pipeline built on Splunk and AWS EC2 to detect and automatically contain SSH brute-force attacks.
+            </p>
+            <ul class="card-list">
+              <li>Detected SSH brute-force attempts with ~99% reliability using SPL correlation rules.</li>
+              <li>Built a Flask-based webhook for real-time IP blocking, cutting response time to under 1 second.</li>
+              <li>Integrated UFW automation with Splunk alerts for a 100% autonomous containment workflow.</li>
+            </ul>
+            <div class="card-links">
+            </div>
+            <div class="card-meta">2025 – Present · Security Engineer / Developer · Phagwara, Punjab</div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  © 2026 a3x0666 · SOC-Focused Portfolio · GitHub Pages
-</footer>
+    <section id="research" class="section section-alt">
+      <div class="container section-narrow">
+        <h2>Research</h2>
+        <article class="research-item">
+          <h3>MetaScan: Entropy-Driven Static Malware Triage Framework</h3>
+          <p class="research-meta">Undergraduate Researcher · Sept 2025 – Present · Punjab, India</p>
+          <p>
+            Researching entropy-based static malware triage using the EMBER 2018 dataset (1.1M PE samples) and designing a framework
+            that combines entropy, structural PE features, and LightGBM-based classification.
+          </p>
+          <ul>
+            <li>Analyzed entropy distribution overlaps between benign and malicious executables to quantify false positives.</li>
+            <li>Proposed a SOC-friendly static triage architecture targeting ~50% false-positive reduction over entropy-only baselines.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div>
+            <h3>Security &amp; SOC</h3>
+            <ul>
+              <li>Splunk SIEM (SPL, log correlation, alert engineering)</li>
+              <li>Threat detection &amp; log analysis</li>
+              <li>IDS / IPS</li>
+              <li>Incident response workflows</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Platforms &amp; Tools</h3>
+            <ul>
+              <li>AWS EC2 monitoring</li>
+              <li>Wireshark, Tshark</li>
+              <li>Linux hardening (UFW, SSH)</li>
+              <li>JSON parsing, Regex</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Programming &amp; Data</h3>
+            <ul>
+              <li>Python &amp; Bash automation</li>
+              <li>SQL, KQL</li>
+              <li>Static analysis &amp; PE parsing</li>
+              <li>LightGBM-based classification (conceptual)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section section-alt">
+      <div class="container section-narrow">
+        <h2>Education</h2>
+        <article class="edu-item">
+          <h3>Lovely Professional University</h3>
+          <p class="edu-meta">B.Tech in Computer Science &amp; Engineering · Minor in Cybersecurity</p>
+          <p class="edu-meta">Punjab, India · Graduation: June 2026 · GPA: 6.63</p>
+          <p><strong>Relevant coursework:</strong> Network Security and Analysis, Operating Systems, Incident Response and Management, Linux Administration, Digital Forensics.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container section-narrow">
+        <h2>Contact</h2>
+        <p>
+          If you’d like to discuss internship or entry-level opportunities in cybersecurity, SOC operations, or security engineering,
+          feel free to reach out.
+        </p>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> <a href="mailto:abhay.aneesh2906@outlook.com">abhay.aneesh2906@outlook.com</a></li>
+          <li><strong>Phone:</strong> <a href="tel:+917559144918">+91 7559 144 918</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/a3x0666" target="_blank">@a3x0666</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/abhayaneesh" target="_blank">linkedin.com/in/abhayaneesh</a></li>
+          <li><strong>Location:</strong> Kerala, India</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Abhay Aneesh</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
