@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Abhay Aneesh | Cybersecurity Portfolio</title>
+  <title>Abhay P Aneesh | Cybersecurity Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Cybersecurity-focused Computer Science undergraduate with experience in SOC automation, malware triage, and SIEM engineering." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -404,11 +404,31 @@
       color: var(--muted);
     }
 
+    .research-item > p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0 0 0.5rem;
+    }
+
     .research-item ul {
       margin: 0.8rem 0 0;
       padding-left: 1.1rem;
       font-size: 0.9rem;
       color: var(--muted);
+    }
+
+    .research-item ul li {
+      margin-bottom: 0.35rem;
+    }
+
+    .research-keywords {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .research-keywords strong {
+      color: #d4d4d4;
     }
 
     .skills-grid {
@@ -431,6 +451,74 @@
 
     .skills-grid li {
       margin-bottom: 0.3rem;
+    }
+
+    /* Certifications */
+    .certs-grid {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .cert-item {
+      background: #050505;
+      border-radius: var(--radius-lg);
+      padding: 1.2rem 1.4rem;
+      border: 1px solid rgba(38, 38, 38, 0.9);
+      box-shadow: var(--shadow-subtle);
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-item::before {
+      content: "";
+      position: absolute;
+      inset: -120px;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.04), transparent 55%);
+      opacity: 0;
+      transition: opacity 200ms ease-out;
+    }
+
+    .cert-item:hover::before {
+      opacity: 1;
+    }
+
+    .cert-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      background: #0f0f0f;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #e5e5e5;
+      flex-shrink: 0;
+      letter-spacing: 0.04em;
+      overflow: hidden;
+      padding: 4px;
+    }
+
+    .cert-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .cert-info h3 {
+      margin: 0 0 0.15rem;
+      font-size: 0.95rem;
+    }
+
+    .cert-info p {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--muted);
     }
 
     .edu-item {
@@ -511,6 +599,10 @@
       .skills-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
+
+      .certs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 640px) {
@@ -537,6 +629,7 @@
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#research">Research</a>
+        <a href="#certifications">Certs</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
@@ -549,7 +642,7 @@
       <div class="container hero-grid">
         <div>
           <p class="hero-kicker">Cybersecurity · SOC Automation · Malware Triage</p>
-          <h1>Hi, I’m <span class="accent">Abhay Aneesh</span>.</h1>
+          <h1>Hi, I'm <span class="accent">Abhay P Aneesh</span>.</h1>
           <p class="hero-subtitle">
             Cybersecurity-focused Computer Science undergraduate specializing in SOC automation, entropy-based malware detection,
             and SIEM engineering with Splunk and AWS.
@@ -605,7 +698,7 @@
             <header class="timeline-header">
               <div>
                 <h3>Summer Intern (Networking &amp; Cybersecurity)</h3>
-              <p class="timeline-org">Bharat Electronics Limited (BEL) · Bengaluru, India</p>
+                <p class="timeline-org">Bharat Electronics Limited (BEL) · Bengaluru, India</p>
               </div>
               <span class="timeline-date">Aug 2024</span>
             </header>
@@ -662,21 +755,61 @@
       <div class="container section-narrow">
         <h2>Research</h2>
         <article class="research-item">
-          <h3>MetaScan: Entropy-Driven Static Malware Triage Framework</h3>
-          <p class="research-meta">Undergraduate Researcher · Sept 2025 – Present · Punjab, India</p>
+          <h3>MetaScan: A Multi-Signal Static Malware Triage System with Zero False Positives for SOC Environments</h3>
+          <p class="research-meta">Undergraduate Researcher · September 2025 – Present · Punjab, India</p>
           <p>
-            Researching entropy-based static malware triage using the EMBER 2018 dataset (1.1M PE samples) and designing a framework
-            that combines entropy, structural PE features, and LightGBM-based classification.
+            Designing and evaluating MetaScan, a lightweight static malware triage framework that combines Shannon entropy analysis,
+            YARA-based pattern detection, file-type awareness, and heuristic scoring into a unified API-based service for real-time SOC use.
+            Evaluated on a curated dataset of 1,357 samples (1,057 benign, 300 malicious).
           </p>
           <ul>
-            <li>Analyzed entropy distribution overlaps between benign and malicious executables to quantify false positives.</li>
-            <li>Proposed a SOC-friendly static triage architecture targeting ~50% false-positive reduction over entropy-only baselines.</li>
+            <li>Achieved 96.32% accuracy, 1.00 precision, 83.33% recall, and an F1-score of 0.91 with zero false positives on the evaluation set.</li>
+            <li>Demonstrated that multi-signal static analysis significantly outperforms entropy-only approaches in reducing false positives on benign high-entropy files.</li>
+            <li>Introduced an "unknown" classification tier to enable controlled escalation, reducing alert fatigue without sacrificing precision.</li>
+            <li>Deployed as a REST API (Flask + Gunicorn) suitable for direct integration into automated SOC pipelines and analyst dashboards.</li>
           </ul>
+          <p class="research-keywords"><strong>Keywords:</strong> malware triage, static analysis, Shannon entropy, YARA, file-type detection, heuristic scoring, SOC automation, false positives</p>
         </article>
       </div>
     </section>
 
-    <section id="skills" class="section">
+    <section id="certifications" class="section">
+      <div class="container section-narrow">
+        <h2>Certifications</h2>
+        <div class="certs-grid">
+          <div class="cert-item">
+            <div class="cert-badge"><img src="secplus-badge.png" alt="CompTIA Security+ badge" /></div>
+            <div class="cert-info">
+              <h3>CompTIA Security+</h3>
+              <p>SY0-701 · CompTIA</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-badge"><img src="netplus-badge.png" alt="CompTIA Network+ badge" /></div>
+            <div class="cert-info">
+              <h3>CompTIA Network+</h3>
+              <p>N10-009 · CompTIA</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-badge"><img src="azure-badge.png" alt="Microsoft Azure Administrator Associate badge" /></div>
+            <div class="cert-info">
+              <h3>Azure Administrator</h3>
+              <p>AZ-104 · Microsoft</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-badge"><img src="google-cyber-badge.png" alt="Google Cybersecurity Professional Certificate badge" /></div>
+            <div class="cert-info">
+              <h3>Google Cybersecurity Professional</h3>
+              <p>Professional Certificate · Google</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-alt">
       <div class="container">
         <h2>Skills</h2>
         <div class="skills-grid">
@@ -711,7 +844,7 @@
       </div>
     </section>
 
-    <section id="education" class="section section-alt">
+    <section id="education" class="section">
       <div class="container section-narrow">
         <h2>Education</h2>
         <article class="edu-item">
@@ -723,11 +856,11 @@
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section section-alt">
       <div class="container section-narrow">
         <h2>Contact</h2>
         <p>
-          If you’d like to discuss internship or entry-level opportunities in cybersecurity, SOC operations, or security engineering,
+          If you'd like to discuss internship or entry-level opportunities in cybersecurity, SOC operations, or security engineering,
           feel free to reach out.
         </p>
         <ul class="contact-list">
@@ -743,7 +876,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>© <span id="year"></span> Abhay Aneesh</span>
+      <span>© <span id="year"></span> Abhay P Aneesh</span>
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
@@ -751,5 +884,66 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-</body>
+<script data-pplx-inline-edit>
+(function(){
+  if(window===window.top)return;
+  function inlineAll(orig,clone){
+    if(orig.nodeType!==1)return;
+    try{
+      var cs=getComputedStyle(orig);
+      var t='';
+      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
+      clone.style.cssText=t;
+    }catch(e){}
+    var oc=orig.children,cc=clone.children;
+    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
+  }
+  function stripExternal(clone){
+    var imgs=clone.querySelectorAll('img');
+    for(var i=0;i<imgs.length;i++){
+      var s=imgs[i].getAttribute('src');
+      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
+    }
+    var all=clone.querySelectorAll('*');
+    for(var i=0;i<all.length;i++){
+      var st=all[i].style.cssText;
+      if(st&&st.indexOf('url(')>=0){
+        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
+      }
+    }
+  }
+  window.addEventListener('message',function(e){
+    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
+    var scrollX=window.scrollX||window.pageXOffset||0;
+    var scrollY=window.scrollY||window.pageYOffset||0;
+    var w=window.innerWidth,h=window.innerHeight;
+    try{
+      var clone=document.documentElement.cloneNode(true);
+      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
+      for(var i=0;i<rm.length;i++){rm[i].remove();}
+      inlineAll(document.documentElement,clone);
+      stripExternal(clone);
+      var html=new XMLSerializer().serializeToString(clone);
+      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
+        +'<foreignObject width="100%" height="100%">'
+        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
+        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
+        +html+'</div></div></foreignObject></svg>';
+      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+      var img=new Image();
+      img.onload=function(){
+        var c=document.createElement('canvas');c.width=w;c.height=h;
+        c.getContext('2d').drawImage(img,0,0);
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.onerror=function(){
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.src=svgUrl;
+    }catch(err){
+      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+    }
+  });
+})();
+</script></body>
 </html>
